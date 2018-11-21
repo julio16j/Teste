@@ -25,7 +25,9 @@ SECRET_KEY = 'hr6tl!zel=vpakhql)f@9a9z+%69-#-+h-y92ll&j=f2_5g#n4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mapaifpb.pythonanywhere.com',
+    ]
 
 
 # Application definition
