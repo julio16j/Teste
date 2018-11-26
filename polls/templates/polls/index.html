@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>TESTE</title>
+</head>
+<body>
+
+
+<ul>
+    {% for question in latest_questions %}
+        <li><a href = '/polls/{{question.id}}'><b> {{question.question_text}} </b></a></li>
+    {% endfor %}
+</ul>
+
+
+
+</body>
+</html>
