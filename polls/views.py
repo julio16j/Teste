@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import  Question
+from django.http import HttpResponse,JsonResponse
+from .models import  *
+
 from django.template import loader, RequestContext
 # Create your views here.
 def index(request):
@@ -16,6 +17,10 @@ def results(response ,question_id):
 def vote( response,question_id):
     return HttpResponse("vote on question: %s" %question_id)
 def envia(request,lat,long):
-    context = {'latitude': lat,
-               'longitude':long}
-    return render (request, 'polls/envia.html',context)
+    coord = Coordenadas(latitude = lat, longitude = long)
+    coord.save()
+    dicionario = {'latitude':lat,'longitude':long}
+    return HttpResponse()
+def get(request):
+    coord = Coordenadas.objects.latest('id')
+    return JsonResponse({'lat':coord.latitude,'long':coord.longitude})

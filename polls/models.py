@@ -15,3 +15,10 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+class Coordenadas(models.Model):
+    latitude = models.CharField(max_length=200)
+    longitude = models.CharField(max_length=200)
+
+    def __int__(self):
+        return self.id
